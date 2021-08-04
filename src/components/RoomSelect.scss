@@ -1,0 +1,90 @@
+@use "../components/shared";
+
+@media (prefers-color-scheme: light) {
+  $background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  $background-color: black;
+}
+
+h1.title {
+  font-size: 3em;
+  margin: 0em 0em 0.5em 0em;
+}
+
+h2.title-description {
+  font-size: 1.5em;
+  margin: 0 0 6em 0;
+}
+
+.btn-group {
+  height: 10em;
+  align-items: center;
+  margin: 0 0 10em 0;
+}
+
+.btn-mainmenu {
+  width: 10em;
+  height: 3em;
+  font-size: 2em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border: 1px solid shared.$color;
+  margin: 0.5em auto;
+  border-radius: 1em;
+  box-shadow: 0px 0px 3px #484c44;
+  display: block;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: shared.$background-color;
+  color: shared.$color;
+  position: relative;
+  mix-blend-mode: multiply;
+  transition: all 0.3s ease-in;
+  &::before {
+    transition: all 0.3s ease-in;
+    content: "";
+    position: absolute;
+    border: 1px solid shared.$color;
+    border-radius: 1em;
+    width: 100%; height: 100%;
+    transform: scale(0);
+    top: -1px; left: -1px;
+    z-index: -1;
+    background: shared.$color;
+  }
+  &:hover {
+    color: white;
+    &::before {
+      transform: scale(1);
+    }
+  }
+}
+
+#roomId {
+  font-size: 3em;
+  width: 8em;
+  text-align: center;
+}
+
+.fa-arrow-left {
+  font-size: 3em;
+}
+
+.btn-back {
+  border: none;
+  background: none;
+  color: shared.$color;
+  &:active {
+    color: darken($color: shared.$color, $amount: 15%)
+  }
+}
+
+ul.room-select {
+  display: grid;
+  grid-template-columns: 10em auto 10em;
+  grid-column-gap: 5px;
+  justify-items: center;
+  padding: 0;
+  list-style: none;
+}

@@ -1,0 +1,42 @@
+$textcolor: black;
+
+header {
+  width: 100vw;
+  background-color: #c8ccc4;
+  color: $textcolor;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+nav ul {
+  margin: 0;
+}
+
+header h1, nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  text-decoration: none;
+  color: $textcolor;
+}
+
+header h1 {
+  font-size: 2em;
+  padding: 0.4em;
+}
+
+nav ul li {
+  padding: 0.75em 1em;
+  font-size: 1.5em;
+  &:hover {
+    background-color: #b8bcb4;
+  }
+}
